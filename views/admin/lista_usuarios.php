@@ -8,7 +8,7 @@
 
     <div class="overflow-auto">
 <table id='tbl_product' class="table table-hover table-bordered table-responsive-md">
-  <thead style='background-color: #38b6ff; color:white; font-weight: 500'>
+  <thead style='background-color: darkgreen; color:white; font-weight: 500'>
     <tr>
      <th class='size' scope="col">Id</th> 
       <th class='size' scope="col">Nombre</th>
@@ -34,7 +34,6 @@
       <td class='size'><?php echo $a['name']; ?></td>
         <td class='size' id='id_model' ><?php echo $a['lastname']; ?></td>
       <td class='size' ><?php echo $a['email']; ?></td>
-     
       <td class='ajust'><?php echo $a['perfil']; ?></td>
       <td class='ajust'><input type="button" class="btn btn-danger" onclick="fn_eliminar_usuario(<?=$a['id']?>)" value="Eliminar">
       <button  class="btn btn-info" onclick='fn_edit_user(<?php echo json_encode($a)?>)' data-toggle="modal" data-target="#modalmodificar">Modificar</button>

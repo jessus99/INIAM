@@ -29,7 +29,7 @@
       <select  class="form-select" name="idReceptor" id="exampleSelect2">
           <?php
           foreach ($respuestaUsuarios as $respuesta) {
-if($respuesta['perfil']=="Nutricionista" ||$respuesta['perfil']=="Terapeuta"){
+if($respuesta['perfil']=="Digitador" ||$respuesta['perfil']=="Administrador"){
           ?>
           <option value="<?=$respuesta['id']?>"><?= $respuesta['name'].", ". $respuesta['perfil']?></option>
          <?php
