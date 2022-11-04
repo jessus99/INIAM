@@ -3,7 +3,7 @@
 session_start();
 if (isset($_SESSION['perfil'])) {
 $perfil=$_SESSION['perfil'];
-if($perfil==2){
+if($perfil==4){
     $perfil=2;
 }
     switch ($perfil) {
@@ -66,6 +66,68 @@ if($perfil==2){
                     require_once './views/clientes/inicio.php';
                     break;
             }
+
+
+
+
+            break;
+        case 3:
+            if (isset($_GET['pagina'])) {
+                $pagina = $_GET['pagina'];
+            } else {
+                $pagina = "principal_profesional";
+            }
+            switch ($pagina) {
+                case "principal_profesional":
+                    require_once './config/conexion.php';
+                    require_once './views/profesionales/navbar.php';
+                    require_once './models/userModel.php';
+                    require_once './controllers/userController.php';
+                    $clientes = new userController();
+                    $respuesta_clientes = $clientes->readAllUser();
+                    require_once './views/profesionales/lista_clientes.php';
+                    echo "<script src='./js/script_clientes6.js'></script>";
+                    echo "<script src='./js/script_clientes_mensajes.js'></script>";
+                    break;
+                case "cargas":
+                    require_once '../config/conexion.php';
+                    require_once '../controllers/userController.php';
+                    require_once '../models/userModel.php';
+                    $usuarios = new userController();
+                    $respuestaUsuarios = $usuarios->readAllUser();
+                    require_once '../controllers/mensajesController.php';
+                    require_once '../models/mensajesModel.php';
+                    require_once '../models/conversacionesModel.php';
+                    $mensaje = new mensajesController();
+                    $respuesta_mensajes = $mensaje->cargarMensajes($_SESSION['id']);
+                    require_once '../views/mensajes/mensajes_clientes.php';
+                    require_once '../views/mensajes/lista_mensajes.php';
+                    break;
+                case "comidas":
+                   
+                    require_once '../config/conexion.php';
+                    require_once '../controllers/comidasController.php';
+                    
+                    break;
+                case "recomendaciones":
+                    require_once '../config/conexion.php';
+                    require_once '../controllers/userController.php';
+                    require_once '../models/userModel.php';
+                    $usuarios = new userController();
+                    $respuestaUsuarios = $usuarios->readAllUser();
+                    require_once '../views/recomendaciones/recomendaciones.php';
+                    $_POST['action']="listar";
+                    require_once '../models/recomendacionModel.php';
+                    require_once '../controllers/recomendacionController.php';
+                    $recomendacion=new recomendacionController(); 
+                    $respuesta_recomendaciones=$recomendacion->listar();
+                    require_once '../views/recomendaciones/listado_recomendaciones.php';
+                default:
+                    
+                    break;
+            }
+
+            break;
         case 1:
 if (isset($_GET['pagina'])) {
                 $pagina = $_GET['pagina'];
@@ -102,5 +164,3 @@ if (isset($_GET['pagina'])) {
     require_once './views/login.php';
     require_once './views/registro.php';
 }
-
-

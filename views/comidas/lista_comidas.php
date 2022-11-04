@@ -9,7 +9,7 @@ if(isset($_GET['cargar'])){
 }
 ?>
 <div id="content" class='content overflow-auto'style='margin:50px 50px;'>
-    <h4>Lista de Comidas</h4>
+    <h4>Lista de Carreras</h4>
     <div class="overflow-auto">
 <table id='tbl_product' class="table table-hover table-bordered table-responsive-md">
   <thead style='background-color: #38b6ff; color:white; font-weight: 500'>

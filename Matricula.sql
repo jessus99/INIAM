@@ -55,7 +55,7 @@ CREATE TABLE `tbl_conversaciones` (
 --
 
 INSERT INTO `tbl_conversaciones` (`id`, `nombre`, `idemisor`, `idreceptor`) VALUES
-(33, 'hola', 10, 2);
+(1, 'hola', 10, 2);
 
 -- --------------------------------------------------------
 
@@ -120,7 +120,7 @@ CREATE TABLE `tbl_perfiles` (
 INSERT INTO `tbl_perfiles` (`id`, `nombre`, `descripcion`) VALUES
 (1, 'Administrador', 'Gerente General'),
 (2, 'Cliente',''),
-(4, 'admin', '');
+(3, 'Digitador', 'Recepcionista');
 
 -- --------------------------------------------------------
 
