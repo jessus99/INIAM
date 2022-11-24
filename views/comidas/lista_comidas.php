@@ -15,7 +15,7 @@ if(isset($_GET['cargar'])){
   <thead style='background-color: #38b6ff; color:white; font-weight: 500'>
     <tr>
       
-      <th class='size' scope="col">Nombre</th>
+      <th class='size' scope="col">Nombre Carrera</th>
       <th class='size'  scope="col">Cantidad</th>
       <th class='size'  scope="col">Calorías</th>
       <th class='ajust' scope="col">Tipo</th>

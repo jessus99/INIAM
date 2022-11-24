@@ -10,7 +10,7 @@
     <div class='col-lg-6 float-left mx-auto'><img src='./images/users/user.png' alt='alt' style='border-radius:50%;width:200px;height:200px'/></div>
     <div>
         <button class='btn btn-info mt-3' style="min-width:200px" onclick='fn_mensajes()'> Mensajes</button><br/>
-        <button class='btn btn-success mt-3' style="min-width:200px" onclick='fn_comidas()'> Comidas</button><br/>
+        <button class='btn btn-success mt-3' style="min-width:200px" onclick='fn_comidas()'> Carreras</button><br/>
         <button class='btn btn-warning mt-3' style="min-width:200px" onclick='fn_recomendaciones()'> Recomendaciones</button><br/>
  </div>
     </div>
