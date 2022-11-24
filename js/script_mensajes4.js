@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-$('#form_registro_mensajes').submit(registrarComida);
+$('#form_registro_mensajes').submit(registrarCarrera);
  
 
 });
@@ -8,11 +8,11 @@ $('#form_registro_mensajes').submit(registrarComida);
   
 function fn_cerrar(){
     
-//   $('#mensajes_error_comidas').css("display","none");
-//   $('#mensajes_ok_comidas').css("display","none");
+//   $('#mensajes_error_carreras').css("display","none");
+//   $('#mensajes_ok_carreras').css("display","none");
 }
 
-function registrarComida(evento) {
+function registrarCarrera(evento) {
         evento.preventDefault();
     
         var datos = new FormData($('#form_registro_mensajes')[0]);
@@ -27,16 +27,16 @@ function registrarComida(evento) {
              alert(response);
                 if (response==true) {
                      alert("Mensaje enviado con exito");
-//                    $('#mensajes_ok_comidas').css("display","block");
-//                    $('#txt_mensaje_comida').text("Alimento registrado con éxito");
+//                    $('#mensajes_ok_carreras').css("display","block");
+//                    $('#txt_mensaje_carrera').text("Alimento registrado con éxito");
                   window.setTimeout(function () {
                       
                             window.location.href = "./?pagina=mensajes"
                         }, 1000);
                 } else {
                     alert("Ha ocurrido un error");
-//                    $('#mensajes_error_comidas').css("display","block");
-//                    $('#txt_mensaje_comida_error').text("Error al ingresar datos, verifique todos los espacios");
+//                    $('#mensajes_error_carreras').css("display","block");
+//                    $('#txt_mensaje_carrera_error').text("Error al ingresar datos, verifique todos los espacios");
                 }
             }
 

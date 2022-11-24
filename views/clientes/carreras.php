@@ -1,7 +1,7 @@
 <?php
 ?>
 <div class="card bg-secondary mb-3 mx-auto" style="width:50%">
-  <div class="card-header">Agregar Comida</div>
+  <div class="card-header">Matricular Carrera</div>
   <div class="card-body">
       <form id="form_registro_comidas" action="" method="POST" >
             <input type="hidden" name="action" value="insertar">
@@ -9,28 +9,22 @@
             <div class="modal-body">
                             
                                 <div class="form-group">
-                                     <label for="nombre">Nombre: </label>
-                                        <input type="text" id="nombre" class="form-control" name="nombre" required="required" pattern="[A-Za-z ]+"  placeholder="Nombre del alimento">
+                                <label for="exampleSelect2">Carrera:</label>
+                                <select  class="form-select" name="tipo" id="exampleSelect2">
+                                        <option value="1">Matematicas</option>
+                                        <option value="2">Ingenieria en Sistemas</option>
+                                        <option value="3">Contabilidad</option>
+                                </select>
                                 </div>
                                 <div class="form-group">
-                                     <label for="cantidad">Cantidad: </label>
-                                        <input type="number" id="cantidad" class="form-control" name="cantidad" required="required" pattern="[A-Za-z ]+"  placeholder="Cantidad en gramos">
+                                <label for="exampleSelect2">Nombre Profesor:</label>
+                                <select  class="form-select" name="tipo" id="exampleSelect2">
+                                        <option value="1">Luis</option>
+                                        <option value="2">Jesus</option>
+                                        <option value="3">Steven</option>
+                                </select>
                                 </div>
-             
-                        <div class="form-group">
-                            <label for="calorias">Calorías:</label>
-                            <input type="number" class="form-control" id="" name="calorias" required="required" placeholder="Cantidad de calorías">
-                         
-                        </div> 
                         
-                <div class="form-group">
-      <label for="exampleSelect2">Tipo de Alimento:</label>
-      <select  class="form-select" name="tipo" id="exampleSelect2">
-        <option value="1">Carbohidratos</option>
-        <option value="2">Proteínas</option>
-        <option value="3">Grasas</option>
-      </select>
-    </div>
                         
                 <div id="mensajes_ok_comidas" style="display:none">
         <div class="alert alert-dismissible alert-success">

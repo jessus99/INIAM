@@ -24,18 +24,18 @@ if($perfil==4){
                     $respuesta = $respuesta->cargarRecomendaciones($_SESSION['id']);
                     require_once './views/clientes/inicio.php';
                     break;
-                case 'comidas':
+                case 'carreras':
                     require_once './config/conexion.php';
-                    require_once './models/comidasModel.php';
-                    require_once './controllers/comidasController.php';
+                    require_once './models/carrerasModel.php';
+                    require_once './controllers/carrerasController.php';
 
-                    $comidas = new comidasController();
+                    $carreras = new carrerasController();
 
-                    $respuesta_comidas = $comidas->cargarComidas($_SESSION['id']);
+                    $respuesta_carreras = $carreras->cargarCarreras($_SESSION['id']);
 
-                    require_once './views/clientes/comidas.php';
-                    require_once './views/comidas/lista_comidas.php';
-                    echo "<script src='./js/script_comidas.js'></script>";
+                    require_once './views/clientes/carreras.php';
+                    require_once './views/carreras/lista_carreras.php';
+                    echo "<script src='./js/script_carreras.js'></script>";
                     break;
                 case 'mensajes':
                     require_once './config/conexion.php';
@@ -103,10 +103,10 @@ if($perfil==4){
                     require_once '../views/mensajes/mensajes_clientes.php';
                     require_once '../views/mensajes/lista_mensajes.php';
                     break;
-                case "comidas":
+                case "carreras":
                    
                     require_once '../config/conexion.php';
-                    require_once '../controllers/comidasController.php';
+                    require_once '../controllers/carrerasController.php';
                     
                     break;
                 case "recomendaciones":

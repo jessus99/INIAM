@@ -1,11 +1,11 @@
 
 
   function fn_enviar_mensaje(){
-      registrarComida();
+      registrarCarrera();
   }
 
 
-function registrarComida() {
+function registrarCarrera() {
        
     alert("ingresando mensaje");
         var datos = new FormData($('#form_profesionales_mensajes')[0]);

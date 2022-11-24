@@ -5,7 +5,7 @@ require_once '../config/conexion.php';
 
 class comidasModel{
     
-        private $nombre;
+    private $nombre;
     private $cantidad;
     private $calorias;
     private $tipo;

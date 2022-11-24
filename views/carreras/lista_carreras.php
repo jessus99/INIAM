@@ -5,7 +5,7 @@ if(isset($_GET['cargar'])){
     
     
      $object =  json_decode( json_encode( $resultado),true);
-     $respuesta_comidas=$object;
+     $respuesta_carreras=$object;
 }
 ?>
 <div id="content" class='content overflow-auto'style='margin:50px 50px;'>

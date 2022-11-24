@@ -66,7 +66,7 @@ function fn_mensajes(){
 
         });
 }
-function fn_comidas(){
+function fn_carreras(){
     var id= $("#id_title").text();
    let div=document.getElementById('loads');
    div.style.color="black";
@@ -76,7 +76,7 @@ function fn_comidas(){
     }
    
     $.ajax({
-            url: "controllers/accesos.php?pagina=comidas",
+            url: "controllers/accesos.php?pagina=carreras",
             type: "POST",
             datatype: "html",
             data: data,
@@ -86,7 +86,7 @@ function fn_comidas(){
               let datos=JSON.parse(response);
               
               $.ajax({
-            url: "views/comidas/lista_comidas.php?cargar=tabla",
+            url: "views/carreras/lista_carreras.php?cargar=tabla",
             type: "POST",
             datatype: "json",
             data: {json: JSON.stringify(datos)},
@@ -122,7 +122,7 @@ function fn_eliminar(data){
     
   
     $.ajax({
-            url: "controllers/comidasController.php",
+            url: "controllers/carrerasController.php",
             type: "POST",
             datatype: "html",
             data: data,
@@ -132,7 +132,7 @@ function fn_eliminar(data){
                     alert("Eliminado con exito");
                   window.setTimeout(function () {
                       
-                           fn_comidas();
+                           fn_carreras();
                         }, 1000);
                 } else {
                    alert("Error al eliminar");
