@@ -30,7 +30,7 @@
                                 
                         <div class="form-group">    
                             <label for="pass">Contraseña:</label>
-                            <input type="password" id="pass1" class="form-control" name="password" minlength="6" maxlength="16" required="required" placeholder="Ingrese su contraseña">
+                            <input type="password" id="pass1" class="form-control" name="password" minlength="8" maxlength="16" required="required" placeholder="Ingrese su contraseña">
                         </div>
                 <div class="form-group">
       <label for="exampleSelect2">Seleccione</label>
