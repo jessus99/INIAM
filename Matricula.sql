@@ -89,7 +89,13 @@ CREATE TABLE `tbl_usuarios` (
   `id_perfil` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- Volcado de datos para la tabla `tbl_usuarios`
+--
 
+INSERT INTO `tbl_usuarios` (`id`, `name`, `lastname`, `email`, `password`, `id_perfil`) VALUES
+('', 'Jesus', 'Granados', 'jessus9899@gmail.com', '135790', 1);
+
+--
 -- Indices de la tabla `tbl_carreras`
 --
 ALTER TABLE `tbl_carreras`
