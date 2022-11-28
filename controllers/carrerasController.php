@@ -5,16 +5,27 @@ if (isset($_POST['action'])) {
 }
 class carrerasController
 {
-    private $id_carrera;
-    private $nombre_carrera;
     private $nombre_profesor;
-    private $horario;
-    private $tipo;
-    public function __construct() {
-        
+    private $carrera;
+    public function getCarrera()
+    {
+        return $this->nombre;
     }
 
-    
+    public function getNombreProfesor()
+    {
+        return $this->cantidad;
+    }
+
+    public function setCarrera($carrera): void
+    {
+        $this->carrera = $carrera;
+    }
+
+    public function setNombreProfesor($nombre_profesor): void
+    {
+        $this->getNombre_Profesor = $nombre_profesor;
+        //$this->nombre_profesor = $nombre_profesor;
     }
     public function insertarCarreras()
     {

@@ -33,6 +33,7 @@
                 <div class="form-group">
       <label for="exampleSelect2">Seleccione</label>
       <select  class="form-select" name="perfil" id="perfilu">
+        <option value="1">Administrador</option>
         <option value="2">Cliente</option>
         <option value="3">Digitador</option>
         <?php if(isset($_SESSION['perfil']) &&$_SESSION['perfil']==1 ){?>
