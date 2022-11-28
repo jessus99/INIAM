@@ -15,9 +15,9 @@ if(isset($_GET['cargar'])){
   <thead style='background-color: #38b6ff; color:white; font-weight: 500'>
     <tr>
       
-      <th class='size' scope="col">Nombre Carrera</th>
-      <th class='size'  scope="col">Cantidad</th>
-      <th class='size'  scope="col">Calorías</th>
+      <th class='ajust' scope="col">Nombre Carrera</th>
+      <th class='ajust'  scope="col">Nombre Profesor</th>
+      <th class='size'  scope="col">Horario</th>
       <th class='ajust' scope="col">Tipo</th>
        <th class='ajust' scope="col">Fecha</th>
       <th class='ajust' scope="col">Acciones</th>
@@ -27,17 +27,17 @@ if(isset($_GET['cargar'])){
   <tbody id="tbody">
       <?php
      $position=0;  
-   if(isset($respuesta_comidas)){
-    foreach ($respuesta_comidas as $a) {
+   if(isset($respuesta_carreras)){
+    foreach ($respuesta_carreras as $a) {
        
        
                     ?>
            
     <tr class="table-primary" style="height:10%;">
       
-      <td class='size'><?php echo $a['nombre']; ?></td>
-        <td class='size' id='id_model' ><?php echo $a['cantidad']; ?></td>
-      <td class='size' ><?php echo $a['calorias']; ?></td>
+      <td class='size'><?php echo $a['nombre_carrera']; ?></td>
+      <td class='size'><?php echo $a['nombre_profesor']; ?></td>
+      <td class='size' ><?php echo $a['horario']; ?></td>
       <td class='ajust'><?php echo $a['tipo']; ?></td>
       <td class='ajust'><?php echo $a['fecha']; ?></td>
       <td class='ajust'><input type="button" onclick="fn_eliminar({'id':'<?=$a['id']?>','action':'eliminar'})" value="Eliminar"></td>
