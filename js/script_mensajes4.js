@@ -28,7 +28,7 @@ function registrarCarrera(evento) {
                 if (response==true) {
                      alert("Mensaje enviado con exito");
 //                    $('#mensajes_ok_carreras').css("display","block");
-//                    $('#txt_mensaje_carrera').text("Alimento registrado con éxito");
+//                    $('#txt_mensaje_carrera').text("Carrera registrada con éxito");
                   window.setTimeout(function () {
                       
                             window.location.href = "./?pagina=mensajes"

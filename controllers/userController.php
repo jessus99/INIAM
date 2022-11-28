@@ -171,11 +171,10 @@ $query;
  public function deleteuser() {
      require_once '../models/conversacionesModel.php';
 require_once '../models/mensajesModel.php';
-require_once '../models/recomendacionModel.php';
-require_once '../models/comidasModel.php';
+require_once '../models/carrerasModel.php';
         $id=$_POST['id'];
         $validacion;
-        //validar si existen recomendaciones, mensajes, registro de comidas, conversaciones y eliminarlas
+        //validar si existen mensajes, registro de carreras, conversaciones y eliminarlas
         $validacion=mensajesModel::listarMensajesPorId($id);
         if($validacion==true){
         $validacion= mensajesModel::eliminarPorId($id);
@@ -190,9 +189,9 @@ require_once '../models/comidasModel.php';
                 $validacion= recomendacionModel::eliminarPorId($id);
        
             }
-        $validacion= comidasModel::listarComidasPorIdUsuario($id);
+        $validacion= carrerasModel::listarcarrerasPorIdUsuario($id);
         if($validacion==true){
-                $validacion= comidasModel::eliminarPorIdUsuario($id);
+                $validacion= carrerasModel::eliminarPorIdUsuario($id);
        
             }
         $response = new userModel();

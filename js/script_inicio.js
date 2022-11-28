@@ -6,7 +6,6 @@ function fn_cambio(data){
     }
     
     $.ajax({
-            url: "controllers/recomendacionController.php",
             type: "POST",
             datatype: "html",
             data: parametros,

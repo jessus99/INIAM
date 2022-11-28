@@ -54,7 +54,7 @@ function fn_eliminar(data){
               alert(response)
                 if (response==true) {
                     $('#mensajes_ok_carreras').css("display","block");
-                    $('#txt_mensaje_carrera').text("Alimento registrado con éxito");
+                    $('#txt_mensaje_carrera').text("Carrera registrada con éxito");
                   window.setTimeout(function () {
                       
                             window.location.href = "./?pagina=carreras"

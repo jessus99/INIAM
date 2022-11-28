@@ -30,12 +30,11 @@
                                 
                         <div class="form-group">    
                             <label for="pass">Contraseña:</label>
-                            <input type="password" id="pass1" class="form-control" name="password" minlength="8" maxlength="16" required="required" placeholder="Ingrese su contraseña">
+                            <input type="password" id="pass1" class="form-control" name="password" minlength="6" maxlength="16" required="required" placeholder="Ingrese su contraseña">
                         </div>
                 <div class="form-group">
       <label for="exampleSelect2">Seleccione</label>
       <select  class="form-select" name="perfil" id="exampleSelect2">
-        <option value="1">Administrador</option>
         <option value="2">Cliente</option>
         <option value="3">Digitador</option>
         <?php if(isset($_SESSION['perfil']) &&$_SESSION['perfil']==1 ){?>

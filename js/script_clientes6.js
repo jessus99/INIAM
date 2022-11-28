@@ -1,38 +1,3 @@
-
-function fn_enviar_recomendacion(){
-
-        var datos = new FormData($('#form_recomendaciones')[0]);
-      
-        $.ajax({
-            url: "controllers/recomendacionController.php",
-            type: "POST",
-            data: datos,
-            contentType: false,
-            processData: false,
-            success: function (response) {
-             
-                if (response==true) {
-                     $("#asunto").val(" ");
-                      $("#respuestaMensajes").css("color","green");
-                      $("#respuestaMensajes").text("Recomendación enviada...");
-                       $("#titulo").val(" ");
-                       window.setTimeout(function () {
-                      
-                            fn_recomendaciones();  
-                        }, 1000);
-                            
-                        
-                } else {
-                    $("#respuestaMensajes").css("color","red");
-                      $("#respuestaMensajes").text("Error al enviar recomendacion...");
-
-                }
-            }
-
-
-
-        });
-}
 function fn_cargar(datos){
   
   $("#nombre_title").text(datos['name']);
@@ -101,9 +66,6 @@ function fn_carreras(){
                 }
             }
 
-
-
-        
          });
          
                         }else {
@@ -143,64 +105,7 @@ function fn_eliminar(data){
 
         });
 }
-function fn_recomendaciones(){
-        let div=document.getElementById('loads');
-    div.style.color="black";
-   var id= $("#id_title").text();
-   if($.isNumeric(id)){
-   let data={"id":id}
-   
-    $.ajax({
-            url: "controllers/accesos.php?pagina=recomendaciones",
-            type: "POST",
-            datatype: "html",
-            data: data,
-                        success: function (response) {
-             
-              
-                if (response) {
-                   div.innerHTML=response;
-                } else {
-                   
-                }
-            }
 
-
-
-        });
-    } else {
-        div.innerHTML="Debe seleccionar un ID de la lista de usuarios";
-                   div.style.color="red";
-    }
-    
-}
-function fn_eliminar_recomendacion(data){
-    
-    var datos={
-        "action":"eliminar",
-        "id":data
-    }
-    $.ajax({
-            url: "controllers/recomendacionController.php",
-            type: "POST",
-            datatype: "html",
-            data: datos,
-                        success: function (response) {
-       alert(response);
-                if (response==true) {
-                    alert("Eliminado con exito");
-                  window.setTimeout(function () {
-                      fn_recomendaciones();
-                        }, 1000);
-                } else {
-                   alert("Error al eliminar");
-                }
-            }
-
-
-
-        }); 
-}
 function fn_cerrar_box(){
     let element =document.getElementById('box_mensajes');
     let elemento =document.getElementById('content');

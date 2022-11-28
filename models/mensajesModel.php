@@ -88,7 +88,6 @@ class mensajesModel{
         }
    }
    public function listarMensajes($idconver){
-       $result;
       
          try {
             $db = conexion::getConnect();
@@ -107,8 +106,6 @@ class mensajesModel{
         
    }
    public static function listarMensajesPorId($id){
-       $result;
-       $resultado;
       
          try {
             $db = conexion::getConnect();

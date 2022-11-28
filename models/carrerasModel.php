@@ -107,58 +107,58 @@ class carrerasModel
     }
     public static function cargarCarreras($id)
     {
-        $comidas = []; //arreglo 
+        $carreras = []; //arreglo 
         try {
             $db = conexion::getConnect();
             $consulta = $db->prepare("SELECT a.id, a.nombre_carrera, a.nombre_profesor, a.horario, t.nombre as tipo, a.fecha FROM tbl_carreras a INNER JOIN tbl_tipos t ON a.tipo = t.id where a.id_usuario =$id");
             $consulta->execute();
-            foreach ($consulta->fetchAll(PDO::FETCH_ASSOC) as $comida) {
-                $comidas[] = $comida;
+            foreach ($consulta->fetchAll(PDO::FETCH_ASSOC) as $carrera) {
+                $carreras[] = $carrera;
             }
         } catch (PDOException $e) {
             echo "se ha presentado un error " . $e->getMessage();
             throw $e;
         }
 
-        return $comidas;
+        return $carreras;
     }
     public static function cargarTodasCarreras($id)
     {
 
-        $comidas = []; //arreglo 
+        $carreras = []; //arreglo 
         try {
             $db = conexion::getConnect();
             $consulta = $db->prepare("SELECT a.id, a.nombre_carrera, a.nombre_profesor, a.horario, t.nombre as tipo, a.fecha FROM tbl_carreras a INNER JOIN tbl_tipos t ON a.tipo = t.id where a.id_usuario =$id");
             $consulta->execute();
-            foreach ($consulta->fetchAll(PDO::FETCH_ASSOC) as $comida) {
-                $comidas[] = $comida;
+            foreach ($consulta->fetchAll(PDO::FETCH_ASSOC) as $carrera) {
+                $carreras[] = $carrera;
             }
         } catch (PDOException $e) {
             echo "se ha presentado un error " . $e->getMessage();
             throw $e;
-            $comidas = false;
+            $carreras = false;
         }
 
-        return $comidas;
+        return $carreras;
     }
-    public static function listarComidasPorIdUsuario($id)
+    public static function listarCarrerasPorIdUsuario($id)
     {
 
-        $comidas = []; //arreglo 
+        $carreras = []; //arreglo 
         try {
             $db = conexion::getConnect();
-            $consulta = $db->prepare("SELECT a.id, a.nombre, a.nombre_profesor, a.horario, t.nombre as tipo, a.fecha FROM tbl_carreras a INNER JOIN tbl_tipos t ON a.tipo = t.id where a.id_usuario =$id");
+            $consulta = $db->prepare("SELECT a.id, a.nombre_carrera, a.nombre_profesor, a.horario, t.nombre as tipo, a.fecha FROM tbl_carreras a INNER JOIN tbl_tipos t ON a.tipo = t.id where a.id_usuario =$id");
             $consulta->execute();
-            foreach ($consulta->fetchAll(PDO::FETCH_ASSOC) as $comida) {
-                $comidas[] = $comida;
+            foreach ($consulta->fetchAll(PDO::FETCH_ASSOC) as $carrera) {
+                $carreras[] = $carrera;
             }
         } catch (PDOException $e) {
             echo "se ha presentado un error " . $e->getMessage();
             throw $e;
-            $comidas = false;
+            $carreras = false;
         }
 
-        if (isset($comidas)) {
+        if (isset($carreras)) {
             return true;
         } else {
             return false;

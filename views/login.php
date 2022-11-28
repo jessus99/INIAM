@@ -27,7 +27,7 @@
 
              
         <div class='container'>
-            <input type="submit" id="" class="btn btn-secondary" style="" value='Ingresar'>
+            <input type="submit" id="" class="btn btn-success" style=" " value='Ingresar'>
             <button type="button" id="btnregistro" value="registrar" class="btn btn-secondary" data-toggle="modal" data-target="#modalregistro" >Registrarse</button>
         </div>
     

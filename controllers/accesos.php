@@ -18,10 +18,6 @@ if($perfil==4){
             switch ($pagina) {
                 case 'principal':
                     require_once './config/conexion.php';
-                    require_once './models/recomendacionModel.php';
-                    require_once './controllers/recomendacionController.php';
-                    $respuesta = new recomendacionController();
-                    $respuesta = $respuesta->cargarRecomendaciones($_SESSION['id']);
                     require_once './views/clientes/inicio.php';
                     break;
                 case 'carreras':
@@ -108,21 +104,6 @@ if($perfil==4){
                     require_once '../config/conexion.php';
                     require_once '../controllers/carrerasController.php';
                     
-                    break;
-                case "recomendaciones":
-                    require_once '../config/conexion.php';
-                    require_once '../controllers/userController.php';
-                    require_once '../models/userModel.php';
-                    $usuarios = new userController();
-                    $respuestaUsuarios = $usuarios->readAllUser();
-                    require_once '../views/recomendaciones/recomendaciones.php';
-                    $_POST['action']="listar";
-                    require_once '../models/recomendacionModel.php';
-                    require_once '../controllers/recomendacionController.php';
-                    $recomendacion=new recomendacionController(); 
-                    $respuesta_recomendaciones=$recomendacion->listar();
-                    require_once '../views/recomendaciones/listado_recomendaciones.php';
-                default:
                     
                     break;
             }
