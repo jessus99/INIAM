@@ -3,42 +3,78 @@
 if (isset($_POST['action'])) {
     require_once '../models/carrerasModel.php';
 }
-class carrerasController
-{
+    class carrerasController{
+    private $id_carrera;
+    private $nombre_carrera;
     private $nombre_profesor;
-    private $carrera;
-    public function getCarrera()
+    private $horario;
+    private $tipo;
+    public function __construct() {
+        
+    }
+    public function getId_carrera()
     {
-        return $this->nombre;
+        return $this->id_carrera;
+    }
+    public function setId_carrera($id_carrera)
+    {
+        $this->id_carrera = $id_carrera;
+
+        return $this;
+    }
+    public function getNombre_carrera()
+    {
+        return $this->nombre_carrera;
+    }
+    public function setNombre_carrera($nombre_carrera)
+    {
+        $this->nombre_carrera = $nombre_carrera;
+
+        return $this;
+    } 
+    public function getNombre_profesor()
+    {
+        return $this->nombre_profesor;
     }
 
-    public function getNombreProfesor()
+    public function setNombre_profesor($nombre_profesor)
     {
-        return $this->cantidad;
+        $this->nombre_profesor = $nombre_profesor;
+
+        return $this;
+    }
+    public function getHorario()
+    {
+        return $this->horario;
     }
 
-    public function setCarrera($carrera): void
+    public function setHorario($horario)
     {
-        $this->carrera = $carrera;
+        $this->horario = $horario;
+
+        return $this;
     }
 
-    public function setNombreProfesor($nombre_profesor): void
+    public function getTipo()
     {
-        $this->getNombre_Profesor = $nombre_profesor;
-        //$this->nombre_profesor = $nombre_profesor;
+        return $this->tipo;
+    }
+    public function setTipo($tipo)
+    {
+        $this->tipo = $tipo;
+
+        return $this;
     }
     public function insertarCarreras()
     {
 
-        $comida = new carrerasModel();
-        $comida->setCarrera($_POST['nombre']);
-        $comida->setCantidad($_POST['cantidad']);
-        $comida->setCalorias($_POST['calorias']);
-        $comida->setCantidad($_POST['cantidad']);
-        $comida->setTipo($_POST['tipo']);
-
-        $comida->setIdUsuario($_POST['id']);
-        $query = carrerasModel::insertar($comida);
+        $carrera = new carrerasModel();
+        $carrera->setNombre_carrera($_POST['nombre_carrera']);
+        $carrera->setNombre_profesor($_POST['nombre_profesor']);
+        $carrera->setHorario($_POST['horario']);
+        $carrera->setTipo($_POST['tipo']);
+        $carrera->setIdUsuario($_POST['id']);
+        $query = carrerasModel::insertar($carrera);
         return $query;
     }
     public function cargarTodasCarreras()
@@ -64,12 +100,12 @@ class carrerasController
         $query = carrerasModel::eliminarCarreras($_POST['id']);
         return $query;
     }
-}
-if (isset($_POST['action'])) {
+    }
+    if (isset($_POST['action'])) {
 
     $action = $_POST['action'] . "Carreras";
     $carreras = new carrerasController();
     $response = $carreras->$action();
     echo $response;
     die();
-}
+    }

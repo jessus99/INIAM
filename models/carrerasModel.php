@@ -5,11 +5,10 @@ if (isset($_POST['action'])) {
 
 class carrerasModel
 {
+    private $id_carrera;
+    private $nombre_carrera;
     private $nombre_profesor;
-    private $carrera;
-    private $nombre;
-    private $cantidad;
-    private $calorias;
+    private $horario;
     private $tipo;
     private $idUsuario;
 
@@ -20,7 +19,7 @@ class carrerasModel
 
     public function getNombreProfesor()
     {
-        return $this->cantidad;
+        return $this->nombre_profesor;
     }
 
     public function setCarrera($carrera): void
@@ -43,20 +42,37 @@ class carrerasModel
     {
         $this->idUsuario = $idUsuario;
     }
-
-    public function getNombre()
+    public function getNombre_carrera()
     {
-        return $this->nombre;
+        return $this->nombre_carrera;
+    }
+    public function setNombre_carrera($nombre_carrera)
+    {
+        $this->nombre_carrera = $nombre_carrera;
+
+        return $this;
+    } 
+    public function getNombre_profesor()
+    {
+        return $this->nombre_profesor;
     }
 
-    public function getCantidad()
+    public function setNombre_profesor($nombre_profesor)
     {
-        return $this->cantidad;
+        $this->nombre_profesor = $nombre_profesor;
+
+        return $this;
+    }
+    public function getHorario()
+    {
+        return $this->horario;
     }
 
-    public function getCalorias()
+    public function setHorario($horario)
     {
-        return $this->calorias;
+        $this->horario = $horario;
+
+        return $this;
     }
 
     public function getTipo()
@@ -64,39 +80,22 @@ class carrerasModel
         return $this->tipo;
     }
 
-    public function setNombre($nombre): void
-    {
-        $this->nombre = $nombre;
-    }
-
-    public function setCantidad($cantidad): void
-    {
-        $this->cantidad = $cantidad;
-    }
-
-    public function setCalorias($calorias): void
-    {
-        $this->calorias = $calorias;
-    }
-
     public function setTipo($tipo): void
     {
         $this->tipo = $tipo;
     }
-    public static function insertar($alimento)
+    public static function insertar($carrera)
     {
         try {
             $db = conexion::getConnect(); //inicia la conexion
             $db->beginTransaction(); //inicia la transaccion
-            $consulta = $db->prepare("insert into tbl_alimentos (nombre,cantidad,calorias,tipo,id_usuario)"
-                . " values (:nombre,:cantidad,:calorias,:tipo,:id_usuario)");
-            $consulta->bindValue(':nombre', $alimento->getNombre());
-            $consulta->bindValue(':cantidad', $alimento->getCantidad());
-            $consulta->bindValue(':cantidad', $alimento->getCarrera());
-            $consulta->bindValue(':cantidad', $alimento->getNombreProfesor());
-            $consulta->bindValue(':calorias', $alimento->getCalorias());
-            $consulta->bindValue(':tipo', $alimento->getTipo());
-            $consulta->bindValue(':id_usuario', $alimento->getIdUsuario());
+            $consulta = $db->prepare("insert into tbl_carreras (nombre_carrera,nombre_profesor,horario,tipo,id_usuario)"
+                . " values (:nombre,:nombre_profesor,:horario,:tipo,:id_usuario)");
+            $consulta->bindValue(':nombre_carrera', $carrera->getNombre());
+            $consulta->bindValue(':nombre_profesor', $carrera->getnombre_profesor());
+            $consulta->bindValue(':horario', $carrera->gethorario());
+            $consulta->bindValue(':tipo', $carrera->getTipo());
+            $consulta->bindValue(':id_usuario', $carrera->getIdUsuario());
             $consulta->execute(); //ejecuta la consulta
             $db->commit(); //verifica la ejecucion
             return true;
@@ -111,7 +110,7 @@ class carrerasModel
         $comidas = []; //arreglo 
         try {
             $db = conexion::getConnect();
-            $consulta = $db->prepare("SELECT a.id, a.nombre, a.cantidad, a.calorias, t.nombre as tipo, a.fecha FROM tbl_alimentos a INNER JOIN tbl_tipos t ON a.tipo = t.id where a.id_usuario =$id");
+            $consulta = $db->prepare("SELECT a.id, a.nombre_carrera, a.nombre_profesor, a.horario, t.nombre as tipo, a.fecha FROM tbl_carreras a INNER JOIN tbl_tipos t ON a.tipo = t.id where a.id_usuario =$id");
             $consulta->execute();
             foreach ($consulta->fetchAll(PDO::FETCH_ASSOC) as $comida) {
                 $comidas[] = $comida;
@@ -129,7 +128,7 @@ class carrerasModel
         $comidas = []; //arreglo 
         try {
             $db = conexion::getConnect();
-            $consulta = $db->prepare("SELECT a.id, a.nombre, a.cantidad, a.calorias, t.nombre as tipo, a.fecha FROM tbl_alimentos a INNER JOIN tbl_tipos t ON a.tipo = t.id where a.id_usuario =$id");
+            $consulta = $db->prepare("SELECT a.id, a.nombre_carrera, a.nombre_profesor, a.horario, t.nombre as tipo, a.fecha FROM tbl_carreras a INNER JOIN tbl_tipos t ON a.tipo = t.id where a.id_usuario =$id");
             $consulta->execute();
             foreach ($consulta->fetchAll(PDO::FETCH_ASSOC) as $comida) {
                 $comidas[] = $comida;
@@ -148,7 +147,7 @@ class carrerasModel
         $comidas = []; //arreglo 
         try {
             $db = conexion::getConnect();
-            $consulta = $db->prepare("SELECT a.id, a.nombre, a.cantidad, a.calorias, t.nombre as tipo, a.fecha FROM tbl_alimentos a INNER JOIN tbl_tipos t ON a.tipo = t.id where a.id_usuario =$id");
+            $consulta = $db->prepare("SELECT a.id, a.nombre, a.nombre_profesor, a.horario, t.nombre as tipo, a.fecha FROM tbl_carreras a INNER JOIN tbl_tipos t ON a.tipo = t.id where a.id_usuario =$id");
             $consulta->execute();
             foreach ($consulta->fetchAll(PDO::FETCH_ASSOC) as $comida) {
                 $comidas[] = $comida;
@@ -169,7 +168,7 @@ class carrerasModel
     {
         try {
             $db = conexion::getConnect();
-            $consulta = $db->prepare("DELETE FROM tbl_alimentos WHERE id =:id");
+            $consulta = $db->prepare("DELETE FROM tbl_carreras WHERE id =:id");
             $consulta->bindValue(':id', $id);
             $result = $consulta->execute();
 
@@ -188,7 +187,7 @@ class carrerasModel
     {
         try {
             $db = conexion::getConnect();
-            $consulta = $db->prepare("DELETE FROM tbl_alimentos WHERE id_usuario =:id");
+            $consulta = $db->prepare("DELETE FROM tbl_carreras WHERE id_usuario =:id");
             $consulta->bindValue(':id', $id);
             $result = $consulta->execute();
 
