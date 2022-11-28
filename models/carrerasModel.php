@@ -91,10 +91,10 @@ class carrerasModel
             $db->beginTransaction(); //inicia la transaccion
             $consulta = $db->prepare("insert into tbl_carreras (nombre_carrera,nombre_profesor,horario,tipo,id_usuario)"
                 . " values (:nombre,:nombre_profesor,:horario,:tipo,:id_usuario)");
-            $consulta->bindValue(':nombre_carrera', $carrera->getNombre());
+            $consulta->bindValue(':nombre_carrera', $carrera->getNombre_carrera());
             $consulta->bindValue(':nombre_profesor', $carrera->getnombre_profesor());
             $consulta->bindValue(':horario', $carrera->gethorario());
-            $consulta->bindValue(':tipo', $carrera->getTipo());
+            $consulta->bindValue(':tipo', $carrera->gettipo());
             $consulta->bindValue(':id_usuario', $carrera->getIdUsuario());
             $consulta->execute(); //ejecuta la consulta
             $db->commit(); //verifica la ejecucion

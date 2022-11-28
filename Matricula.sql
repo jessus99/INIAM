@@ -39,6 +39,21 @@ CREATE TABLE `tbl_alimentos` (
 
 -- --------------------------------------------------------
 
+-- Estructura de tabla para la tabla `tbl_carreras`
+--
+
+CREATE TABLE `tbl_carreras` (
+  `id` int(11) NOT NULL,
+  `nombre_carrera` varchar(50) NOT NULL,
+  `nombre_profesor` varchar(50) NOT NULL,
+  `horario` varchar(10) NOT NULL,
+  `tipo` varchar(10) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `fecha` date NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
 --
 -- Estructura de tabla para la tabla `tbl_conversaciones`
 --
@@ -212,6 +227,13 @@ INSERT INTO `tbl_usuarios` (`id`, `name`, `lastname`, `email`, `password`, `id_p
 -- Indices de la tabla `tbl_alimentos`
 --
 ALTER TABLE `tbl_alimentos`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idx_tipos` (`tipo`),
+  ADD KEY `idx_usuario` (`id_usuario`);
+
+-- Indices de la tabla `tbl_alimentos`
+--
+ALTER TABLE `tbl_carreras`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idx_tipos` (`tipo`),
   ADD KEY `idx_usuario` (`id_usuario`);

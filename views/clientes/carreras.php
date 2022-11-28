@@ -3,27 +3,33 @@
 <div class="card bg-secondary mb-3 mx-auto" style="width:50%">
         <div class="card-header">Matricular Carrera</div>
         <div class="card-body">
-                <form id="form_registro_comidas" action="" method="POST">
+                <form id="form_registro_carreras" action="" method="POST">
                         <input type="hidden" name="action" value="insertar">
                         <input type="hidden" name="id" value="<?= $_SESSION['id'] ?>">
                         <div class="modal-body">
 
-                                <div class="form-group">
-                                        <label for="exampleSelect2">Carrera:</label>
-                                        <select class="form-select" name="tipo" id="exampleSelect2">
-                                                <option value="1">Matematicas</option>
-                                                <option value="2">Ingenieria en Sistemas</option>
-                                                <option value="3">Contabilidad</option>
-                                        </select>
+                        <div class="form-group">
+                                     <label for="nombre_carrera">Nombre_carrera: </label>
+                                        <input type="text" id="nombre" class="form-control" name="nombre_carrera" required="required" pattern="[A-Za-z ]+"  placeholder="Nombre de la carrera">
                                 </div>
                                 <div class="form-group">
-                                        <label for="exampleSelect2">Nombre Profesor:</label>
-                                        <select class="form-select" name="tipo" id="exampleSelect2">
-                                                <option value="1">Luis</option>
-                                                <option value="2">Jesus</option>
-                                                <option value="3">Steven</option>
-                                        </select>
+                                     <label for="nombre_profesor">Nombre_profesor: </label>
+                                        <input type="text" id="profesor" class="form-control" name="nombre_profesor" required="required" pattern="[A-Za-z ]+"  placeholder="Nombre del Profesor">
                                 </div>
+             
+                                <div class="form-group">
+                                        <label for="horario">Horario:</label>
+                                                <input type="text" class="form-control" id="" name="horario" required="required" placeholder="Horario de estudio">
+                                
+                                </div>
+
+                                <div class="form-group">
+                                        <label for="tipo">Tipo:</label>
+                                                <input type="text" class="form-control" id="" name="tipo" required="required" placeholder="Tipo de jornada">
+                                
+                                </div>
+
+                        
 
 
                                 <div id="mensajes_ok_comidas" style="display:none">
