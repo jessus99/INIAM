@@ -129,6 +129,7 @@ if (isset($_GET['pagina'])) {
                     require_once './views/admin/modificar.php';
                     echo "<script src='./js/script_admin.js'></script>";
                     break;
+                
 
                 default:
                     break;
