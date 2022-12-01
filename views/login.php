@@ -1,5 +1,6 @@
     <?php
 ?>
+
 <div class="mx-auto col-lg-6 " style="margin-top:150px;">
     <div id='img_logo'>
            

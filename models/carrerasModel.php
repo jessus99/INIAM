@@ -3,36 +3,13 @@ if (isset($_POST['action'])) {
     require_once '../config/conexion.php';
 }
 
-class carrerasModel
-{
-    private $id_carrera;
+class carrerasModel{
+
     private $nombre_carrera;
     private $nombre_profesor;
     private $horario;
     private $tipo;
     private $idUsuario;
-
-    public function getCarrera()
-    {
-        return $this->nombre;
-    }
-
-    public function getNombreProfesor()
-    {
-        return $this->nombre_profesor;
-    }
-
-    public function setCarrera($carrera): void
-    {
-        $this->carrera = $carrera;
-    }
-
-    public function setNombreProfesor($nombre_Profesor): void
-    {
-        //$this->getnombre_profesor = $nombre_Profesor;
-        $this->nombre_profesor = $nombre_Profesor;
-    }
-
     public function getIdUsuario()
     {
         return $this->idUsuario;
@@ -42,46 +19,36 @@ class carrerasModel
     {
         $this->idUsuario = $idUsuario;
     }
-    public function getNombre_carrera()
-    {
+    
+    public function getNombreCarrera() {
         return $this->nombre_carrera;
     }
-    public function setNombre_carrera($nombre_carrera)
-    {
-        $this->nombre_carrera = $nombre_carrera;
 
-        return $this;
-    } 
-    public function getNombre_profesor()
-    {
+    public function getNombreProfesor() {
         return $this->nombre_profesor;
     }
 
-    public function setNombre_profesor($nombre_profesor)
-    {
-        $this->nombre_profesor = $nombre_profesor;
-
-        return $this;
-    }
-    public function getHorario()
-    {
+    public function getHorario() {
         return $this->horario;
     }
 
-    public function setHorario($horario)
-    {
-        $this->horario = $horario;
-
-        return $this;
-    }
-
-    public function getTipo()
-    {
+    public function getTipo() {
         return $this->tipo;
     }
 
-    public function setTipo($tipo): void
-    {
+    public function setNombreCarrera($nombre_carrera): void {
+        $this->nombre_carrera = $nombre_carrera;
+    }
+
+    public function setNombreProfesor($nombre_profesor): void {
+        $this->nombre_profesor = $nombre_profesor;
+    }
+
+    public function setHorario($horario): void {
+        $this->horario = $horario;
+    }
+
+    public function setTipo($tipo): void {
         $this->tipo = $tipo;
     }
     public static function insertar($carrera)
@@ -90,11 +57,11 @@ class carrerasModel
             $db = conexion::getConnect(); //inicia la conexion
             $db->beginTransaction(); //inicia la transaccion
             $consulta = $db->prepare("insert into tbl_carreras (nombre_carrera,nombre_profesor,horario,tipo,id_usuario)"
-                . " values (:nombre,:nombre_profesor,:horario,:tipo,:id_usuario)");
-            $consulta->bindValue(':nombre_carrera', $carrera->getNombre_carrera());
-            $consulta->bindValue(':nombre_profesor', $carrera->getnombre_profesor());
-            $consulta->bindValue(':horario', $carrera->gethorario());
-            $consulta->bindValue(':tipo', $carrera->gettipo());
+                . " values (:nombre_carrera,:nombre_profesor,:horario,:tipo,:id_usuario)");
+            $consulta->bindValue(':nombre_carrera', $carrera->getNombreCarrera());
+            $consulta->bindValue(':nombre_profesor', $carrera->getnombreProfesor());
+            $consulta->bindValue(':horario', $carrera->getHorario());
+            $consulta->bindValue(':tipo', $carrera->getTipo());
             $consulta->bindValue(':id_usuario', $carrera->getIdUsuario());
             $consulta->execute(); //ejecuta la consulta
             $db->commit(); //verifica la ejecucion

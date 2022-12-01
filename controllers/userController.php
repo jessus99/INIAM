@@ -183,12 +183,6 @@ require_once '../models/carrerasModel.php';
             if($validacion==true){
         $validacion= conversacionesModel::eliminarPorId($id);
         }
-            
-            $validacion= recomendacionModel::listarPorId($id);
-            if($validacion==true){
-                $validacion= recomendacionModel::eliminarPorId($id);
-       
-            }
         $validacion= carrerasModel::listarcarrerasPorIdUsuario($id);
         if($validacion==true){
                 $validacion= carrerasModel::eliminarPorIdUsuario($id);

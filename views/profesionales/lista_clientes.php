@@ -7,7 +7,7 @@
   <div class='card-body'>
     <h4 class='card-title' id='nombre_title'>Nombre de Usuario</h4>
     <h5 id='id_title'>Id</h5>
-    <div class='col-lg-6 float-left mx-auto'><img src='./images/users/user.png' alt='alt' style='border-radius:50%;width:200px;height:200px'/></div>
+    <div class='col-lg-6 float-left mx-auto'><img src='./images/users/usuario.png' alt='alt' style='border-radius:50%;width:200px;height:200px'/></div>
     <div>
         <button class='btn btn-info mt-3' style="min-width:200px" onclick='fn_mensajes()'> Mensajes</button><br/>
         <button class='btn btn-success mt-3' style="min-width:200px" onclick='fn_carreras()'> Carreras</button><br/>

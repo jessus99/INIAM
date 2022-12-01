@@ -4,73 +4,48 @@ if (isset($_POST['action'])) {
     require_once '../models/carrerasModel.php';
 }
     class carrerasController{
-    private $id_carrera;
     private $nombre_carrera;
     private $nombre_profesor;
     private $horario;
     private $tipo;
-    public function __construct() {
-        
-    }
-    public function getId_carrera()
-    {
-        return $this->id_carrera;
-    }
-    public function setId_carrera($id_carrera)
-    {
-        $this->id_carrera = $id_carrera;
-
-        return $this;
-    }
-    public function getNombre_carrera()
-    {
+    
+    public function getNombreCarrera() {
         return $this->nombre_carrera;
     }
-    public function setNombre_carrera($nombre_carrera)
-    {
-        $this->nombre_carrera = $nombre_carrera;
 
-        return $this;
-    } 
-    public function getNombre_profesor()
-    {
+    public function getNombreProfesor() {
         return $this->nombre_profesor;
     }
 
-    public function setNombre_profesor($nombre_profesor)
-    {
-        $this->nombre_profesor = $nombre_profesor;
-
-        return $this;
-    }
-    public function getHorario()
-    {
+    public function getHorario() {
         return $this->horario;
     }
 
-    public function setHorario($horario)
-    {
-        $this->horario = $horario;
-
-        return $this;
-    }
-
-    public function getTipo()
-    {
+    public function getTipo() {
         return $this->tipo;
     }
-    public function setTipo($tipo)
-    {
-        $this->tipo = $tipo;
 
-        return $this;
+    public function setNombreCarrera($nombre_carrera): void {
+        $this->nombre_carrera = $nombre_carrera;
+    }
+
+    public function setNombreProfesor($nombre_profesor): void {
+        $this->nombre_profesor = $nombre_profesor;
+    }
+
+    public function setHorario($horario): void {
+        $this->horario = $horario;
+    }
+
+    public function setTipo($tipo): void {
+        $this->tipo = $tipo;
     }
     public function insertarCarreras()
     {
 
         $carrera = new carrerasModel();
-        $carrera->setNombre_carrera($_POST['nombre_carrera']);
-        $carrera->setNombre_profesor($_POST['nombre_profesor']);
+        $carrera->setNombreCarrera($_POST['nombre_carrera']);
+        $carrera->setNombreProfesor($_POST['nombre_profesor']);
         $carrera->setHorario($_POST['horario']);
         $carrera->setTipo($_POST['tipo']);
         $carrera->setIdUsuario($_POST['id']);

@@ -195,15 +195,6 @@ ALTER TABLE `tbl_mensajes`
   ADD CONSTRAINT `tbl_mensajes_ibfk_3` FOREIGN KEY (`idconversacion`) REFERENCES `tbl_conversaciones` (`id`);
 
 --
--- Filtros para la tabla `tbl_recomendaciones`
---
-ALTER TABLE `tbl_recomendaciones`
-  ADD CONSTRAINT `tbl_recomendaciones_ibfk_1` FOREIGN KEY (`idemisor`) REFERENCES `tbl_usuarios` (`id`),
-  ADD CONSTRAINT `tbl_recomendaciones_ibfk_2` FOREIGN KEY (`idreceptor`) REFERENCES `tbl_usuarios` (`id`),
-  ADD CONSTRAINT `tbl_recomendaciones_ibfk_3` FOREIGN KEY (`tipo`) REFERENCES `tbl_tipos_recomendaciones` (`id`),
-  ADD CONSTRAINT `tbl_recomendaciones_ibfk_4` FOREIGN KEY (`estado`) REFERENCES `tbl_estado_recomendaciones` (`id`);
-
---
 -- Filtros para la tabla `tbl_usuarios`
 --
 ALTER TABLE `tbl_usuarios`
