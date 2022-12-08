@@ -1,6 +1,6 @@
 <?php
 ?>
-<div class="card bg-secondary mb-3 mx-auto" style="width:50%">
+<div class="card bg-light mb-3 mx-auto" style="width:50%">
         <div class="card-header">Matricular Carrera</div>
         <div class="card-body">
                 <form id="form_registro_carreras" action="" method="POST">
@@ -49,7 +49,7 @@
                         </div>
                         <div class="">
 
-                                <input type="submit" id="btn_regist" value="Registrar" class="btn btn-primary">
+                                <input type="submit" id="btn_regist" value="Registrar" class="btn btn-outline-success">
                         </div>
                 </form>
         </div>

@@ -50,7 +50,7 @@
       <td class='size' ><?php echo $a['lastname']; ?></td>
       <td class='ajust'><?php echo $a['email']; ?></td>
       <td class='ajust'><?php echo $a['perfil']; ?></td>
-      <td class='ajust'><button class='btn btn-primary' onclick='fn_cargar(<?php echo json_encode($a)?>)'> Ver detalles</button></td>
+      <td class='ajust'><button class='btn btn-outline-primary' onclick='fn_cargar(<?php echo json_encode($a)?>)'> Ver detalles</button></td>
     </tr>
     <?php 
        }

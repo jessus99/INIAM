@@ -4,11 +4,11 @@
 <div id="content" class='content overflow-auto'style='margin:50px 50px;'>
     <h4>Lista de Usuarios</h4>
     <div id="msj"></div>
-     <input type="button" class="btn btn-info" data-toggle="modal" data-target="#modalregistro"  value="Agregar">
+     <input type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#modalregistro"  value="Agregar">
 
     <div class="overflow-auto">
 <table id='tbl_product' class="table table-hover table-bordered table-responsive-md">
-  <thead style='background-color: darkgreen; color:white; font-weight: 500'>
+  <thead style='background-color: #1672D9; color:white; font-weight: 500'>
     <tr>
      <th class='size' scope="col">Id</th> 
       <th class='size' scope="col">Nombre</th>
@@ -35,8 +35,8 @@
         <td class='size' id='id_model' ><?php echo $a['lastname']; ?></td>
       <td class='size' ><?php echo $a['email']; ?></td>
       <td class='ajust'><?php echo $a['perfil']; ?></td>
-      <td class='ajust'><input type="button" class="btn btn-danger" onclick="fn_eliminar_usuario(<?=$a['id']?>)" value="Eliminar">
-      <button  class="btn btn-info" onclick='fn_edit_user(<?php echo json_encode($a)?>)' data-toggle="modal" data-target="#modalmodificar">Modificar</button>
+      <td class='ajust'><input type="button" class="btn btn-outline-danger" onclick="fn_eliminar_usuario(<?=$a['id']?>)" value="Eliminar">
+      <button  class="btn btn-outline-success" onclick='fn_edit_user(<?php echo json_encode($a)?>)' data-toggle="modal" data-target="#modalmodificar">Modificar</button>
       </td>
     </tr>
     <?php 

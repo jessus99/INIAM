@@ -28,7 +28,7 @@ function fn_eliminar_usuario(data){
                         }, 1000);
                     } else {
                         msj.style.color="red";
-                msj.innerHTML="Error eliminado usuario, intente nuevamente";
+                msj.innerHTML="Error eliminando usuario, intente nuevamente";
                     }
             }
 

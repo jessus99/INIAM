@@ -7,8 +7,8 @@
     <img src="images/logo/INIAM.png" style="border-radius: 0%; width:650px;height:200px; " class="mx-auto d-block" alt="...">
            
         </div>
-<div class="card m-2">
-<div class="card-header" style="background-color: darkgreen; color: white;" >Ingrese aquí: </div>
+<div class="card m-1">
+<div class="card text-white bg-success mb-3" style=" " >Ingrese aquí: </div>
 <div class="card-body col-lg-10 mx-auto" style=''>
 <form class=""  id="formindex" action="" method="POST">
     <input type="hidden" name="action" value="login">
@@ -18,7 +18,7 @@
     
            </div>       
            <div class="form-group">
-                    <label for="email">Correo electrónico: </label>
+                    <label for="email" >Correo electrónico: </label>
                     <input type="email" class="form-control" name="email" placeholder="Enter email" id="email_inicio">
                   </div>
                     <div class="form-group">
@@ -28,8 +28,8 @@
 
              
         <div class='container'>
-            <input type="submit" id="" class="btn btn-success" style=" " value='Ingresar'>
-            <button type="button" id="btnregistro" value="registrar" class="btn btn-secondary" data-toggle="modal" data-target="#modalregistro" >Registrarse</button>
+            <input type="submit" id="" class="btn btn-outline-primary" value='Ingresar'>
+            <button type="button" id="btnregistro" value="registrar" class="btn btn-outline-success" data-toggle="modal" data-target="#modalregistro" >Registrarse</button>
         </div>
     
 </form>

@@ -30,7 +30,7 @@
         
       <td class='size' ><?php echo $a['emisor']; ?></td>
       <td class='ajust'><?php echo $a['receptor']; ?></td>
-      <td class='ajust'><input type="button" class="btn btn-secondary" onclick="fn_ver(<?=$a['id']?>)" value="Ver"></td>
+      <td class='ajust'><input type="button" class="btn btn-outline-info" onclick="fn_ver(<?=$a['id']?>)" value="Ver"></td>
     </tr>
     <?php $position++;
    }}?> 

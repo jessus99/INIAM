@@ -7,7 +7,7 @@ function fn_cargar(datos){
 }
 function fn_mensajes(){
     let div=document.getElementById('loads');
-    div.style.color="black";
+    div.style.color="white";
     let data={
     "hidden":"item"
     }
@@ -34,7 +34,7 @@ function fn_mensajes(){
 function fn_carreras(){
     var id= $("#id_title").text();
    let div=document.getElementById('loads');
-   div.style.color="black";
+   div.style.color="white";
     let data={
     "action":"cargarTodas",
     "idUsuario":id

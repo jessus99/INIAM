@@ -44,7 +44,7 @@ if($respuesta['perfil']=="Digitador" ||$respuesta['perfil']=="Administrador"){
             </div>
                 <div class="">
               
-                        <input type="submit"  id="btn_regist" value="Enviar" class="btn btn-primary">
+                        <input type="submit"  id="btn_regist" value="Enviar" class="btn btn-outline-primary">
                 </div>
         </form>
    </div>

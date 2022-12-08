@@ -44,8 +44,8 @@ if($respuesta['perfil']=="Cliente"){
             </div>
                 <div class="">
               
-                        <input type="button"  id="" value="Enviar" onclick="fn_enviar_mensaje()" class="btn btn-primary">
-                        <input type="button"  id="" value="Cerrar" onclick="fn_cerrar_mensaje()" class="btn btn-warning">
+                        <input type="button"  id="" value="Enviar" onclick="fn_enviar_mensaje()" class="btn btn-outline-info">
+                        <input type="button"  id="" value="Cerrar" onclick="fn_cerrar_mensaje()" class="btn btn-outline-warning">
                 </div>
         </form>
    </div>
