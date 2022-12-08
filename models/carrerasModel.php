@@ -10,17 +10,15 @@ class carrerasModel{
     private $horario;
     private $tipo;
     private $idUsuario;
-    public function getIdUsuario()
-    {
+    public function getIdUsuario()  {
         return $this->idUsuario;
     }
 
-    public function setIdUsuario($idUsuario): void
-    {
+    public function setIdUsuario($idUsuario): void {
         $this->idUsuario = $idUsuario;
     }
     
-    public function getNombreCarrera() {
+        public function getNombreCarrera() {
         return $this->nombre_carrera;
     }
 
@@ -72,8 +70,7 @@ class carrerasModel{
             throw $e;
         }
     }
-    public static function cargarCarreras($id)
-    {
+    public static function cargarCarreras($id){
         $carreras = []; //arreglo 
         try {
             $db = conexion::getConnect();
@@ -125,11 +122,7 @@ class carrerasModel{
             $carreras = false;
         }
 
-        if (isset($carreras)) {
-            return true;
-        } else {
-            return false;
-        }
+        if(isset($carreras)){ return true;}else {return false;}
     }
     public static function eliminarCarreras($id)
     {
