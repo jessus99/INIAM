@@ -8,26 +8,7 @@
                         <input type="hidden" name="id" value="<?= $_SESSION['id'] ?>">
                         <div class="modal-body">
 
-                        <div class="form-group">
-                                     <label for="nombre_carrera">Nombre_carrera: </label>
-                                        <input type="text" id="nombre_carrera" class="form-control" name="nombre_carrera" required="required" pattern="[A-Za-z ]+"  placeholder="Nombre de la carrera">
-                                </div>
-                                <div class="form-group">
-                                     <label for="nombre_profesor">Nombre_profesor: </label>
-                                        <input type="text" id="profesor_presor" class="form-control" name="nombre_profesor" required="required" pattern="[A-Za-z ]+"  placeholder="Nombre del Profesor">
-                                </div>
-             
-                                <div class="form-group">
-                                        <label for="horario">Horario:</label>
-                                                <input type="text" class="form-control" id="horario" name="horario" required="required" placeholder="Horario de estudio">
-                                
-                                </div>
-
-                                <div class="form-group">
-                                        <label for="tipo">Tipo:</label>
-                                                <input type="text" class="form-control" id="tipo" name="tipo" required="required" placeholder="Tipo de jornada">
-                                
-                                </div>
+                        
 
                         
 
