@@ -141,7 +141,6 @@ if (isset($_GET['pagina'])) {
                     $respuesta_carreras = $carreras->cargarCarreras($_SESSION['id']);
 
                     require_once './views/clientes/carreras.php';
-                    require_once './views/carreras/lista_carreras.php';
                     echo "<script src='./js/script_carreras.js'></script>";
                     break;
 
