@@ -9,7 +9,6 @@ class carrerasModel{
     private $nombre_profesor;
     private $horario;
     private $tipo;
-    private $idUsuario;
     public function getIdUsuario()  {
         return $this->idUsuario;
     }

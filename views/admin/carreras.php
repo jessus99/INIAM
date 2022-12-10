@@ -1,7 +1,7 @@
 <?php
 ?>
 <div class="card bg-light mb-3 mx-auto" style="width:50%">
-        <div class="card-header">Matricular Materia</div>
+        <div class="card-header">Registrar Materia</div>
         <div class="card-body">
                 <form id="form_registro_carreras" action="" method="POST">
                         <input type="hidden" name="action" value="insertar">

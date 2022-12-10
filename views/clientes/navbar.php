@@ -20,10 +20,10 @@
       <li class="nav-item">
         <a class="nav-link" href="./?pagina=mensajes">Mensajes</a>
       </li>
-
       <li class="nav-item">
-        <a class="nav-link" href="./?pagina=carreras">Matrícula</a>
+        <a class="nav-link" href="./?pagina=matricula">Matricula</a>
       </li>
+
       <li class="nav-item">
         <a class="nav-link span" href="./controllers/userController.php?action=logout">Cerrar Sesión</a>
       </li>

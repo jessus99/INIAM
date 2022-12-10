@@ -20,7 +20,19 @@ if($perfil==4){
                     require_once './config/conexion.php';
                     require_once './views/clientes/inicio.php';
                     break;
-                
+                case 'matricula':
+                    require_once './config/conexion.php';
+                    require_once './models/carrerasModel.php';
+                    require_once './controllers/carrerasController.php';
+
+                    $carreras = new carrerasController();
+
+                    $respuesta_carreras = $carreras->cargarCarreras($_SESSION['id']);
+
+                    require_once './views/clientes/matricula.php';
+                    require_once './views/carreras/lista_carreras.php';
+                    echo "<script src='./js/script_carreras.js'></script>";
+                    break;
                 case 'mensajes':
                     require_once './config/conexion.php';
                     require_once './models/mensajesModel.php';
@@ -43,10 +55,8 @@ if($perfil==4){
                     echo "<script src='./js/script_mensajes4.js'></script>";
                     echo '</div>';
                     break;
-                case 'citas':
-                    require_once './views/mensajes/mensajes.php';
-                    break;
-                default:
+
+                    default:
                     require_once './views/clientes/inicio.php';
                     break;
             }
