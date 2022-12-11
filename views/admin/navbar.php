@@ -19,10 +19,6 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="./?pagina=carreras">Registro Materia</a>
-      </li>
-
-      <li class="nav-item">
         <a class="nav-link span" href="./controllers/userController.php?action=logout">Cerrar Sesión</a>
       </li>
 

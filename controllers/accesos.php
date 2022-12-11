@@ -127,23 +127,6 @@ if (isset($_SESSION['perfil'])) {
                     require_once './views/admin/modificar.php';
                     echo "<script src='./js/script_admin.js'></script>";
                     break;
-                case 'carreras':
-
-                    require_once './views/admin/navbar.php';
-                    require_once './config/conexion.php';
-                    require_once './models/carrerasModel.php';
-                    require_once './controllers/carrerasController.php';
-
-                    $carreras = new carrerasController();
-
-                    $respuesta_carreras = $carreras->cargarCarreras($_SESSION['id']);
-
-                    require_once './views/admin/carreras.php';
-                    echo "<script src='./js/script_carreras.js'></script>";
-                    break;
-
-                default:
-                    break;
             }
 
             break;
