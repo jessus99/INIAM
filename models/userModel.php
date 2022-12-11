@@ -1,8 +1,9 @@
 <?php
-if(isset($_GET['action']) || isset($_POST['action'])){
-require_once '../config/conexion.php';
+if (isset($_GET['action']) || isset($_POST['action'])) {
+    require_once '../config/conexion.php';
 }
-    class userModel {
+class userModel
+{
 
     private $id;
     private $nombre;
@@ -12,86 +13,103 @@ require_once '../config/conexion.php';
     private $telefono;
     private $perfil;
     private $db;
-    public function getId() {
+    public function getId()
+    {
         return $this->id;
     }
 
-    public function getNombre() {
+    public function getNombre()
+    {
         return $this->nombre;
     }
 
-    public function getApellidos() {
+    public function getApellidos()
+    {
         return $this->apellidos;
     }
 
-    public function getEmail() {
+    public function getEmail()
+    {
         return $this->email;
     }
 
-    public function getPassword() {
+    public function getPassword()
+    {
         return $this->password;
     }
 
-    public function getTelefono() {
+    public function getTelefono()
+    {
         return $this->telefono;
     }
 
-    public function getPerfil() {
+    public function getPerfil()
+    {
         return $this->perfil;
     }
 
-    public function getDb() {
+    public function getDb()
+    {
         return $this->db;
     }
 
-    public function setId($id): void {
+    public function setId($id): void
+    {
         $this->id = $id;
     }
 
-    public function setNombre($nombre): void {
+    public function setNombre($nombre): void
+    {
         $this->nombre = $nombre;
     }
 
-    public function setApellidos($apellidos): void {
+    public function setApellidos($apellidos): void
+    {
         $this->apellidos = $apellidos;
     }
 
-    public function setEmail($email): void {
+    public function setEmail($email): void
+    {
         $this->email = $email;
     }
 
-    public function setPassword($password): void {
+    public function setPassword($password): void
+    {
         $this->password = $password;
     }
 
-    public function setTelefono($telefono): void {
+    public function setTelefono($telefono): void
+    {
         $this->telefono = $telefono;
     }
 
-    public function setPerfil($perfil): void {
+    public function setPerfil($perfil): void
+    {
         $this->perfil = $perfil;
     }
 
-    public function setDb($db): void {
+    public function setDb($db): void
+    {
         $this->db = $db;
     }
 
-    
-        public static function createUsuario($usuario) {
+
+    public static function createUsuario($usuario)
+    {
         try {
-           
+
             $db = conexion::getConnect(); //inicia la conexion
             $db->beginTransaction(); //inicia la transaccion
             $consulta = $db->prepare("insert into tbl_usuarios (name,lastname,email,password,id_perfil)"
-                    . " values (:name,:lastname,:email,:password,:id_perfil)");
+                . " values (:name,:lastname,:email,:password,:id_perfil)");
             $consulta->bindValue(':name', $usuario->getNombre());
             $consulta->bindValue(':lastname', $usuario->getApellidos());
-            
+
             $consulta->bindValue(':email', $usuario->getEmail());
             $consulta->bindValue(':password', $usuario->getPassword());
-         
+
             $consulta->bindValue(':id_perfil', $usuario->getPerfil());
-           
+
             $consulta->execute(); //ejecuta la consulta 
             $db->commit(); //verifica la ejecucion
             return true;
@@ -102,10 +120,11 @@ require_once '../config/conexion.php';
         }
     }
 
-    public static function readOnceUser($user) {
-        
-        $email=$user->getEmail();
-     
+    public static function readOnceUser($user)
+    {
+
+        $email = $user->getEmail();
+
         try {
             $db = conexion::getConnect();
             $consulta = $db->prepare("SELECT * from tbl_usuarios where email = :email");
@@ -118,16 +137,17 @@ require_once '../config/conexion.php';
         }
         return $ingreso;
     }
-    public static function readOnceUserPerId($id) {
-        
-        
-       
+    public static function readOnceUserPerId($id)
+    {
+
+
+
         try {
             $db = conexion::getConnect();
             $consulta = $db->prepare("SELECT * from tbl_usuarios where id = :id");
             $consulta->bindValue(':id', $id);
             $consulta->execute();
-            $result= $consulta->fetch(PDO::FETCH_ASSOC);
+            $result = $consulta->fetch(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
             echo "se ha presentado un error " . $e->getMessage();
             throw $e;
@@ -135,22 +155,23 @@ require_once '../config/conexion.php';
         return $result;
     }
 
-    public static function updateUsuario($usuario) {
-        
+    public static function updateUsuario($usuario)
+    {
+
         try {
             $db = conexion::getConnect();
             //(name,lastname,address,email,password,phone,id_perfil,id_estado)
             $consulta = $db->prepare("UPDATE tbl_usuarios SET name = :name, lastname = :lastname, " . "
-                     email= :email, id_perfil= :id_perfil"."
+                    email= :email, id_perfil= :id_perfil" . "
                     WHERE id =:id");
             $consulta->bindValue(':id', $usuario->getId());
             $consulta->bindValue(':name', $usuario->getNombre());
             $consulta->bindValue(':lastname', $usuario->getApellidos());
-            
+
             $consulta->bindValue(':email', $usuario->getEmail());
-           
+
             $consulta->bindValue(':id_perfil', $usuario->getPerfil());
-           
+
             $consulta->execute();
             return true;
         } catch (PDOException $e) { //captura en caso de error de proceso db
@@ -160,7 +181,8 @@ require_once '../config/conexion.php';
         }
     }
 
-    public static function readAllUsuarios() {
+    public static function readAllUsuarios()
+    {
         $usuarios; //arreglo 
         try {
             $db = conexion::getConnect();
@@ -176,27 +198,23 @@ require_once '../config/conexion.php';
         return $usuarios;
     }
 
-    public static function deleteUser($usuario) {
+    public static function deleteUser($usuario)
+    {
         try {
 
             $db = conexion::getConnect();
             $consulta = $db->prepare("DELETE FROM tbl_usuarios WHERE id =:id");
             $consulta->bindValue(':id', $usuario->getId());
-            $resultado=$consulta->execute();
-            if($resultado)
-            { return true;}else {return false;}
+            $resultado = $consulta->execute();
+            if ($resultado) {
+                return true;
+            } else {
+                return false;
+            }
         } catch (PDOException $e) { //captura en caso de error de proceso db
             echo "se ha presentado un error " . $e->getMessage(); //muestra el mensaje de error.
             $db->rollBack(); //en caso de error, elimina las transacciones que se han realizado
             throw $e;
         }
     }
-
-    
- 
-
 }
-
-?>
-
-

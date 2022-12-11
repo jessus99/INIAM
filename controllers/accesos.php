@@ -2,12 +2,12 @@
 
 session_start();
 if (isset($_SESSION['perfil'])) {
-$perfil=$_SESSION['perfil'];
-if($perfil==4){
-    $perfil=2;
-}
+    $perfil = $_SESSION['perfil'];
+    //if ($perfil == 4) {
+    //   $perfil = 2;
+    //}
     switch ($perfil) {
-        case 2:
+        case 1:
             if (isset($_GET['pagina'])) {
                 $pagina = $_GET['pagina'];
             } else {
@@ -56,7 +56,7 @@ if($perfil==4){
                     echo '</div>';
                     break;
 
-                    default:
+                default:
                     require_once './views/clientes/inicio.php';
                     break;
             }
@@ -65,7 +65,7 @@ if($perfil==4){
 
 
             break;
-        case 3:
+        case 2:
             if (isset($_GET['pagina'])) {
                 $pagina = $_GET['pagina'];
             } else {
@@ -98,17 +98,17 @@ if($perfil==4){
                     require_once '../views/mensajes/lista_mensajes.php';
                     break;
                 case "carreras":
-                   
+
                     require_once '../config/conexion.php';
                     require_once '../controllers/carrerasController.php';
-                    
-                    
+
+
                     break;
             }
 
             break;
-        case 1:
-if (isset($_GET['pagina'])) {
+        case 3:
+            if (isset($_GET['pagina'])) {
                 $pagina = $_GET['pagina'];
             } else {
                 $pagina = "admin";
@@ -119,7 +119,7 @@ if (isset($_GET['pagina'])) {
                     require_once './config/conexion.php';
                     require_once './models/userModel.php';
                     require_once './controllers/userController.php';
-                    
+
                     $usuarios = new userController();
                     $respuestaUsuarios = $usuarios->readAllUser();
                     require_once './views/admin/lista_usuarios.php';
@@ -128,7 +128,7 @@ if (isset($_GET['pagina'])) {
                     echo "<script src='./js/script_admin.js'></script>";
                     break;
                 case 'carreras':
-                    
+
                     require_once './views/admin/navbar.php';
                     require_once './config/conexion.php';
                     require_once './models/carrerasModel.php';
@@ -147,7 +147,7 @@ if (isset($_GET['pagina'])) {
             }
 
             break;
-    
+
 
         default:
             break;

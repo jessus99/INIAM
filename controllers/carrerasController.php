@@ -3,41 +3,50 @@
 if (isset($_POST['action'])) {
     require_once '../models/carrerasModel.php';
 }
-    class carrerasController{
+class carrerasController
+{
     private $nombre_carrera;
     private $nombre_profesor;
     private $horario;
     private $tipo;
-    
-    public function getNombreCarrera() {
+
+    public function getNombreCarrera()
+    {
         return $this->nombre_carrera;
     }
 
-    public function getNombreProfesor() {
+    public function getNombreProfesor()
+    {
         return $this->nombre_profesor;
     }
 
-    public function getHorario() {
+    public function getHorario()
+    {
         return $this->horario;
     }
 
-    public function getTipo() {
+    public function getTipo()
+    {
         return $this->tipo;
     }
 
-    public function setNombreCarrera($nombre_carrera): void {
+    public function setNombreCarrera($nombre_carrera): void
+    {
         $this->nombre_carrera = $nombre_carrera;
     }
 
-    public function setNombreProfesor($nombre_profesor): void {
+    public function setNombreProfesor($nombre_profesor): void
+    {
         $this->nombre_profesor = $nombre_profesor;
     }
 
-    public function setHorario($horario): void {
+    public function setHorario($horario): void
+    {
         $this->horario = $horario;
     }
 
-    public function setTipo($tipo): void {
+    public function setTipo($tipo): void
+    {
         $this->tipo = $tipo;
     }
     public function insertarCarreras()
@@ -75,12 +84,12 @@ if (isset($_POST['action'])) {
         $query = carrerasModel::eliminarCarreras($_POST['id']);
         return $query;
     }
-    }
-    if (isset($_POST['action'])) {
+}
+if (isset($_POST['action'])) {
 
     $action = $_POST['action'] . "Carreras";
     $carreras = new carrerasController();
     $response = $carreras->$action();
     echo $response;
     die();
-    }
+}

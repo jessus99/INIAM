@@ -8,36 +8,36 @@
                         <input type="hidden" name="id" value="<?= $_SESSION['id'] ?>">
                         <div class="modal-body">
 
-                        <div class="form-group">
-                                <label for="exampleSelect2">nombre_carrera</label>
-                                <select  class="form-select" name="nombre_carrera" id="exampleSelect1">
-                                        <option value="Excel">Excel</option>
-                                        <option value="word">word</option>
-                                        <option value="ofimatica">ofimatica</option>
-                                </select><br>
-                                <label for="exampleSelect2">nombre_profesor</label>
-                                <select  class="form-select" name="nombre_profesor" id="exampleSelect2">
-                                        <option value="Jesus Hernandez">Jesus Hernandez</option>
-                                        <option value="Carlos Valverde">Carlos Valverde</option>
-                                </select>
-                                </select><br>
-                                <label for="exampleSelect2">Horario</label>
-                                <select  class="form-select" name="horario" id="exampleSelect3">
-                                        <option value="8:00 am">8:00 am</option>
-                                        <option value="11:00 am">11:00 am</option>
-                                        <option value="13:00 pm">13:00 pm</option>
-                                        <option value="18:00 pm">18:00 pm</option>
-                                </select>
-                                </select><br>
-                                <label for="exampleSelect2">Tipo</label>
-                                <select  class="form-select" name="tipo" id="exampleSelect4">
-                                        <option value="Diurna">Diurna</option>
-                                        <option value="Nocturna">nocturna</option>
-                                </select>
+                                <div class="form-group">
+                                        <label for="exampleSelect2">nombre_carrera</label>
+                                        <select class="form-select" name="nombre_carrera" id="exampleSelect1">
+                                                <option value="Excel">Excel</option>
+                                                <option value="word">word</option>
+                                                <option value="ofimatica">ofimatica</option>
+                                        </select><br>
+                                        <label for="exampleSelect2">nombre_profesor</label>
+                                        <select class="form-select" name="nombre_profesor" id="exampleSelect2">
+                                                <option value="Jesus Hernandez">Jesus Hernandez</option>
+                                                <option value="Carlos Valverde">Carlos Valverde</option>
+                                        </select>
+                                        </select><br>
+                                        <label for="exampleSelect2">Horario</label>
+                                        <select class="form-select" name="horario" id="exampleSelect3">
+                                                <option value="8:00 am">8:00 am</option>
+                                                <option value="11:00 am">11:00 am</option>
+                                                <option value="13:00 pm">13:00 pm</option>
+                                                <option value="18:00 pm">18:00 pm</option>
+                                        </select>
+                                        </select><br>
+                                        <label for="exampleSelect2">Tipo</label>
+                                        <select class="form-select" name="tipo" id="exampleSelect4">
+                                                <option value="Diurna">Diurna</option>
+                                                <option value="Nocturna">nocturna</option>
+                                        </select>
                                 </div>
-                                
 
-                        
+
+
 
 
                                 <div id="mensajes_ok_carreras" style="display:none">
