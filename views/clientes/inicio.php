@@ -7,7 +7,7 @@
 
   <div id='img_logo'>
     <img src="images/logo/INIAM LOGO ingreso.png" style="border-radius: 0%; width:800px;height:300px; " class="mx-auto d-block" alt="...">
-           
+
   </div>
 </div>
 

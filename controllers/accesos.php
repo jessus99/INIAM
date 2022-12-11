@@ -3,9 +3,9 @@
 session_start();
 if (isset($_SESSION['perfil'])) {
     $perfil = $_SESSION['perfil'];
-    //if ($perfil == 4) {
-    //   $perfil = 2;
-    //}
+    if ($perfil == 4) {
+        $perfil = 2;
+    }
     switch ($perfil) {
         case 1:
             if (isset($_GET['pagina'])) {

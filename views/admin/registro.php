@@ -34,10 +34,10 @@
             <div class="form-group">
               <label for="exampleSelect2">Seleccione</label>
               <select class="form-select" name="perfil" id="exampleSelect2">
-                <option value="2">Cliente</option>
-                <option value="3">Digitador</option>
-                <?php if (isset($_SESSION['perfil']) && $_SESSION['perfil'] == 1) { ?>
-                  <option value="1">Administrador</option>
+                <option value="1">Cliente</option>
+                <option value="2">Digitador</option>
+                <?php if (isset($_SESSION['perfil']) && $_SESSION['perfil'] == 3) { ?>
+                  <option value="3">Administrador</option>
                 <?php } ?>
               </select>
             </div>

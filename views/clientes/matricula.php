@@ -31,8 +31,8 @@
                                         </select><br>
                                         <label for="exampleSelect2">Tipo</label>
                                         <select class="form-select" name="tipo" id="exampleSelect4">
-                                                <option value="Diurna">Diurna</option>
-                                                <option value="Nocturna">nocturna</option>
+                                                <option value="1">Diurna</option>
+                                                <option value="2">nocturna</option>
                                         </select>
                                 </div>
 
