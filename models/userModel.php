@@ -10,7 +10,6 @@ class userModel
     private $apellidos;
     private $email;
     private $password;
-    private $telefono;
     private $perfil;
     private $db;
     public function getId()
@@ -36,11 +35,6 @@ class userModel
     public function getPassword()
     {
         return $this->password;
-    }
-
-    public function getTelefono()
-    {
-        return $this->telefono;
     }
 
     public function getPerfil()
@@ -76,11 +70,6 @@ class userModel
     public function setPassword($password): void
     {
         $this->password = $password;
-    }
-
-    public function setTelefono($telefono): void
-    {
-        $this->telefono = $telefono;
     }
 
     public function setPerfil($perfil): void
@@ -160,14 +149,14 @@ class userModel
 
         try {
             $db = conexion::getConnect();
-            //(name,lastname,address,email,password,phone,id_perfil,id_estado)
+            //(name,lastname,email,password,id_perfil)
             $consulta = $db->prepare("UPDATE tbl_usuarios SET name = :name, lastname = :lastname, " . "
                     email= :email, id_perfil= :id_perfil" . "
                     WHERE id =:id");
             $consulta->bindValue(':id', $usuario->getId());
             $consulta->bindValue(':name', $usuario->getNombre());
             $consulta->bindValue(':lastname', $usuario->getApellidos());
-
+            
             $consulta->bindValue(':email', $usuario->getEmail());
 
             $consulta->bindValue(':id_perfil', $usuario->getPerfil());
@@ -186,7 +175,7 @@ class userModel
         $usuarios; //arreglo 
         try {
             $db = conexion::getConnect();
-            $consulta = $db->prepare("SELECT u.id, u.name, u.lastname,u.email, p.nombre AS perfil FROM tbl_usuarios u INNER JOIN tbl_perfiles p ON u.id_perfil = p.id ");
+            $consulta = $db->prepare("SELECT u.id, u.name, u.lastname,u.email,u.password, p.nombre AS perfil FROM tbl_usuarios u INNER JOIN tbl_perfiles p ON u.id_perfil = p.id ");
             $consulta->execute();
             foreach ($consulta->fetchAll(PDO::FETCH_ASSOC) as $usuario) {
                 $usuarios[] = $usuario;

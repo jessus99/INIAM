@@ -2,7 +2,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="">Matricula</h5>
+          <h5 class="modal-title" id="">Registro</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -32,9 +32,9 @@
             <div class="form-group">
               <label for="exampleSelect2">Seleccione</label>
               <select class="form-select" name="perfil" id="perfilu">
-                <option value="1">Administrador</option>
-                <option value="2">Cliente</option>
-                <option value="3">Digitador</option>
+                <option value="3">Administrador</option>
+                <option value="1">Cliente</option>
+                <option value="2">Digitador</option>
                 <?php if (isset($_SESSION['perfil']) && $_SESSION['perfil'] == 1) { ?>
                   <option value="1">Administrador</option>
                 <?php } ?>

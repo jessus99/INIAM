@@ -19,6 +19,7 @@
                                         <select class="form-select" name="nombre_profesor" id="exampleSelect2">
                                                 <option value="Jesus Hernandez">Jesus Hernandez</option>
                                                 <option value="Carlos Valverde">Carlos Valverde</option>
+                                                <option value="Carlos Valverde">Jose Campbell</option>
                                         </select>
                                         </select><br>
                                         <label for="exampleSelect2">Horario</label>
