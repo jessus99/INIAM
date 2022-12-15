@@ -127,6 +127,29 @@ if (isset($_SESSION['perfil'])) {
                     require_once './views/admin/modificar.php';
                     echo "<script src='./js/script_admin.js'></script>";
                     break;
+                case 'mensajes':
+                    require_once './views/admin/navbar.php';
+                    require_once './config/conexion.php';
+                    require_once './models/mensajesModel.php';
+                    require_once './models/userModel.php';
+                    require_once './models/conversacionesModel.php';
+                    require_once './controllers/userController.php';
+                    require_once './controllers/mensajesController.php';
+                    $usuarios = new userController();
+                    $respuestaUsuarios = $usuarios->readAllUser();
+                    $mensajes = new mensajesController();
+                    $respuesta_mensajes = $mensajes->cargarMensajes($_SESSION['id']);
+                    echo "<div class='row'>";
+                    require_once './views/mensajes/mensajes.php';
+
+                    if ($respuesta_mensajes) {
+                        require_once './views/mensajes/lista_mensajes.php';
+                    } else {
+                        echo "<h4>No hay mensajes</h4>";
+                    }
+                    echo "<script src='./js/script_mensajes4.js'></script>";
+                    echo '</div>';
+                    break;
             }
 
             break;
