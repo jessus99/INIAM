@@ -35,7 +35,6 @@
               <label for="exampleSelect2">Seleccione</label>
               <select class="form-select" name="perfil" id="exampleSelect2">
                 <option value="1">Cliente</option>
-                <option value="2">Digitador</option>
                 <?php if (isset($_SESSION['perfil']) && $_SESSION['perfil'] == 3) { ?>
                   <option value="3">Administrador</option>
                 <?php } ?>
