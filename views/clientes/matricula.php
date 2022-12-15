@@ -14,6 +14,8 @@
                                                 <option value="Excel">Excel</option>
                                                 <option value="word">word</option>
                                                 <option value="ofimatica">ofimatica</option>
+                                                <option value="telefonía">Manejo del celular</option>
+                                                <option value="Access">Access</option>
                                         </select><br>
                                         <label for="exampleSelect2">nombre_profesor</label>
                                         <select class="form-select" name="nombre_profesor" id="exampleSelect2">
